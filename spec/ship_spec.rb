@@ -10,7 +10,15 @@ let(:ship) {Ship.new}
 		expect(ship.size).to eq(1)
 	end
 
-	it 'should have a floating status when created' do 
-		expect(ship.status).to eq :floating
+	it 'should not be sunk when created' do 
+		expect(ship).not_to be_sunk
 	end
+
+	it 'should know when its sunk' do
+		ship.hit
+		expect(ship).to be_sunk
+	end
+
+	
+
 end

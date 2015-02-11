@@ -1,13 +1,20 @@
 class Ship
 
 	attr_reader :size
-	attr_reader :status
 
 	def initialize
 		@size = 1
-		@status = :floating
+		@hits = 0
 	end
 
+	def hit
+		@hits += 1
+	end
+
+	def sunk?
+		@hits == size
+	end
+		
 
 
 end
