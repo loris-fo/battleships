@@ -1,18 +1,22 @@
 class Cell
 
-attr_reader :status
+attr_reader :cell_contents 
+attr_reader :misile_status
 
 def initialize
-	@status = :empty
+	@cell_contents = :water
+	@misile_status = :not_hit
 end
 
 def docked_ship
-	@status = :docked_ship
+	@cell_contents = :docked_ship
 end
 
 def receive_misile
-	@status = :hit
+	@misile_status = :hit
 end
+
+
 
 
 end
