@@ -3,8 +3,8 @@ class Board
 
 	attr_reader :grid
 
-	def initialize(options, cell)
-		@grid = create_grid(options[:size], cell)
+	def initialize(options)
+		@grid = create_grid(options[:size], options[:cell_content])
 	end
 
 	def create_grid(size, cell)
@@ -23,6 +23,9 @@ class Board
 
 	end
 
+	def place_ship(coordinate)
+	
+	end
 
 	
 end
