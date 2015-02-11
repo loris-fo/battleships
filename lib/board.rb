@@ -2,16 +2,27 @@ require 'cell'
 
 class Board
 
-	attr_reader :grid
-
-	def initialize
-		@grid = create_grid
+	def initialize(options)
+		@grid = create_grid(options[:size], options[:cell_content])
 	end
 
-	def create_grid
-		key = (1..2).map {|n| "A#{n}"}
-		value = Cell.new
-		grid = Hash.new(key, value)
+	def create_grid(size, cell)
+		hash_new = {}
+		("A"..(size+64).chr).map do |letter|
+			(1..size).map do |number|
+				hash_new.store(letter+number.to_s, Cell.new)
+			end
+		end
+		hash_new
 	end
-	
+
+	def check_coordinates
+		raise "No such coordinate exist" unless @grid.has_key?(coordinate)
+		@grid.has_key?(coordinate)
+	end
+
+	def place_ship
+
+		
+
 end
