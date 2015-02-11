@@ -1,4 +1,3 @@
-require 'cell'
 
 class Board
 
@@ -7,22 +6,25 @@ class Board
 	end
 
 	def create_grid(size, cell)
-		hash_new = {}
+		new_hash = {}
 		("A"..(size+64).chr).map do |letter|
 			(1..size).map do |number|
-				hash_new.store(letter+number.to_s, Cell.new)
+				new_hash.store(letter+number.to_s, cell.new)
 			end
 		end
-		hash_new
+	new_hash
 	end
 
-	def check_coordinates
-		raise "No such coordinate exist" unless @grid.has_key?(coordinate)
+	def check_coordinate(coordinate)
+		raise "No such coordinate exists" unless @grid.has_key?(coordinate)
 		@grid.has_key?(coordinate)
+
 	end
 
-	def place_ship
+	def place_ship(coordinate)
+	
+	end
 
-		
-
+	
 end
+
