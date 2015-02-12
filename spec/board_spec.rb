@@ -8,7 +8,7 @@ describe 'Board' do
 
 	let(:cell_class) {double :cell_class, :new => cell}
 	let(:cell) {double :cell}
-	let(:player) {double :player, :place_ship => "A1"}
+	# let(:player) {double :player, :place_ship => "A1"}
 	
 	it 'should have a grid' do
 		expect(board).not_to be_nil
@@ -23,7 +23,8 @@ describe 'Board' do
 	end
 
 	it 'can place ships' do
-		expect(board.place_ship)
+		board.place_ship("A1")
+		expect(board.cell_status("A1")).to eq (:ship)
 	end
 
 end

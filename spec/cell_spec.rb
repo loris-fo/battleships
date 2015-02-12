@@ -11,7 +11,7 @@ let(:ship) {Ship.new}
 
 	it 'can have a ship' do 
 		cell.docked_ship(ship)
-		expect(cell.cell_contents).to eq ship
+		expect(cell.cell_contents).to eq :ship
 	end
 
 	it 'should initially be clear, not containing a hit' do

@@ -22,7 +22,11 @@ class Board
 	end
 
 	def place_ship(coordinate)
-	
+		@grid[coordinate] = :ship
+	end
+
+	def cell_status(coordinate)
+		@grid[coordinate]
 	end
 
 	

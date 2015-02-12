@@ -8,7 +8,7 @@ def initialize
 end
 
 def docked_ship(ship)
-	@cell_contents = ship
+	@cell_contents = :ship
 end
 
 def receive_misile
